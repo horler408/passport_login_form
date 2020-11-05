@@ -1,6 +1,4 @@
 
-const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
-
 // Welcome Page
 exports.home =  (req, res) => res.render("home")
 

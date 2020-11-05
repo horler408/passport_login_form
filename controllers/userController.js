@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 
-const User = require("../models/User");
+const User = require("./../models/users");
 
 
 // Get Login Page

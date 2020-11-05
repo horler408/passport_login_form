@@ -5,8 +5,8 @@ const controller = require('./../controllers/userController')
 const { forwardAuthenticated } = require("../config/auth");
 
 
-router.get("/signin", controller.signin);
-router.get("/signup", controller.signup);
+router.get("/signin", forwardAuthenticated, controller.signin);
+router.get("/signup", forwardAuthenticated, controller.signup);
 router.get("/logout", controller.logout)
 router.post("/register", controller.register)
 router.post("/login", controller.login)
