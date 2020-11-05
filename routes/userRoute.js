@@ -5,12 +5,11 @@ const controller = require('./../controllers/userController')
 const { forwardAuthenticated } = require("../config/auth");
 
 
-router.get("/signin", forwardAuthenticated, controller.signin);
 router.get("/signup", forwardAuthenticated, controller.signup);
 router.get("/logout", controller.logout)
 router.post("/register", controller.register)
 router.post("/login", controller.login)
-router.get("/:id", controller.deleteUser)
+router.get("/user/:id", controller.deleteUser)
 router.get("/users", controller.getUsers)
 
 

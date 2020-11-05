@@ -4,9 +4,6 @@ const passport = require("passport");
 const User = require("./../models/users");
 
 
-// Get Login Page
-exports.signin =  (req, res) => res.render("login");
-
 // Get Register Page
 exports.signup = (req, res) => res.render("register");
 
@@ -15,7 +12,7 @@ exports.register = (req, res) => {
   const { first_name, last_name, email, password } = req.body;
   let errors = [];
 
-  if (!first_name || last_name || !email || !password) {
+  if (!first_name || !last_name || !email || !password) {
     errors.push({ msg: "Please enter all fields" });
   }
 

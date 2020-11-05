@@ -4,20 +4,29 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const flash = require("connect-flash");
 const session = require("express-session");
+const path = require('path');
 
 const app = express();
+const dbConnect = require('./config/db')
+
+const indexRoute = require('./routes/indexRoute');
+const userRoute = require('./routes/userRoute');
 
 // Passport Config
 require("./config/passport")(passport);
 
 // DB Config
-const db = require("./config/keys").mongoURL;
+dbConnect()
+// const db = require("./config/keys").mongoURL;
 
-// Connect to MongoDB
-mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
+// // Connect to MongoDB
+// mongoose
+//   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log("MongoDB Connected"))
+//   .catch((err) => console.log(err));
+
+//Static Files
+app.use(express.static(path.join(__dirname, 'public')))
 
 // EJS
 app.use(expressLayouts);
@@ -51,8 +60,8 @@ app.use(function (req, res, next) {
 });
 
 // Routes
-app.use("/", require("./routes/indexRoute.js"));
-app.use("/auth", require("./routes/userRoute.js"));
+app.use("/", indexRoute);
+app.use("/auth", userRoute);
 
 const PORT = process.env.PORT || 5000;
 
