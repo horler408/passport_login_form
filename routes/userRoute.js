@@ -6,6 +6,7 @@ const { forwardAuthenticated } = require("../config/auth");
 
 
 router.get("/signup", forwardAuthenticated, controller.signup);
+router.get("/signin", forwardAuthenticated, controller.signin);
 router.get("/logout", controller.logout)
 router.post("/register", controller.register)
 router.post("/login", controller.login)

@@ -6,6 +6,8 @@ const User = require("./../models/users");
 
 // Get Register Page
 exports.signup = (req, res) => res.render("register");
+// Get Login Page
+exports.signin = (req, res) => res.render("login");
 
 // Post Registration
 exports.register = (req, res) => {
@@ -58,7 +60,7 @@ exports.register = (req, res) => {
                   "success_msg",
                   "You are now registered and can log in"
                 );
-                res.redirect("/users/login");
+                res.redirect("/auth/signin");
               })
               .catch((err) => console.log(err));
           });
@@ -72,7 +74,7 @@ exports.register = (req, res) => {
 exports.login = (req, res, next) => {
   passport.authenticate("local", {
     successRedirect: "/dashboard",
-    failureRedirect: "/auth/signup",
+    failureRedirect: "/auth/signin",
     failureFlash: true
   })(req, res, next);
 }
