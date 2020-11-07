@@ -105,7 +105,8 @@ exports.logout = (req, res) => {
   exports.getUsers = (req, res) => {
     User.find().exec()
     .then(user => {
-      res.status(200).json(user)
+      res.render('users', {users: user})
+      // res.status(200).json(user)
     })
     .catch(error => {
       res.status(400).json({

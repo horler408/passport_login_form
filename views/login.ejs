@@ -3,7 +3,7 @@
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body">
-      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+      <h1 class="text-center mb-3">  Login</h1>
       <%- include('partials/messages'); -%> 
       <form action="/auth/login" method="POST">
         <div class="form-group">
@@ -28,8 +28,11 @@
         </div>
         <button type="submit" class="submit_btn">Login</button>
       </form>
-      <p class="lead mt-4">
+      <p class="text-center lead mt-4">
         No Account yet? <a href="/auth/signup">Register</a>
+      </p>
+      <p class="text-center lead mt-2">
+        Return to <a href="/">Home</a>
       </p>
     </div>
   </div>
