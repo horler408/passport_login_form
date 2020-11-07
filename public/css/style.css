@@ -43,7 +43,8 @@ a {
   margin: 15px 0;
 }
 
-button {
+.submit_btn,
+.ghost {
   border-radius: 20px;
   border: 1px solid #ff4b2b;
   background-color: #ff4b2b;
@@ -226,27 +227,14 @@ input {
   width: 40px;
 }
 
-/* footer {
-  background-color: #222;
-  color: #fff;
-  font-size: 14px;
-  bottom: 0;
-  position: fixed;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 999;
+.error_msg,
+.errors_msg,
+.error_alert {
+  font-size: 12px;
+  color: #ff4b2b;
 }
 
-footer p {
-  margin: 10px 0;
+.success_msg {
+  font-size: 12px;
+  color: chartreuse;
 }
-
-footer i {
-  color: red;
-}
-
-footer a {
-  color: #3c97bf;
-  text-decoration: none;
-} */
