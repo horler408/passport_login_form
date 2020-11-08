@@ -2,6 +2,25 @@
 
 <h1 class="mt-4">Dashboard</h1>
 <p class="lead mb-3">Welcome <%= user.name %></p>
-<a href="/users/logout" class="btn btn-secondary">Logout</a>
+<a href="auth/logout" class="btn btn-secondary">Logout</a>
+
+<div class="drop_down">
+    <button
+        ref={node}
+        className="flex rounded-full items-center py-2 px-3 bg-gradient focus:outline-none shadow-lg"
+        onclick="dropDown()"
+      >
+        <img
+          src="<%= typeof user.avatar != 'undefined' ? user.avatar : '' %>"
+          className="rounded-full w-6 border-2 border-white"
+          alt="Avatar"
+        />
+        <div className="px-3">
+          <p className="text-white"><%= user.name %></p>
+        </div>
+        <div className="mr-1 text-white">
+        </div>
+      </button>
+</div>
 
 <%- include('partials/footer'); -%>
