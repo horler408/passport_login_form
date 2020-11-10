@@ -11,7 +11,9 @@
           <p>Lastst Name: <%= user.last_name %></p>
           <p>Email: <%= user.email %></p>
         </div>
-        <button class="delete"><a href="/user/<% user._id %>">Delete</a></button>
+        <form method="POST" action="/auth/user/<%= user._id %>?_method=DELETE">
+            <button class="btn btn-danger btn-block mt-4">Delete</button>
+        </form>
         <% }); %> 
     <% } %>
 </div>

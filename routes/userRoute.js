@@ -10,7 +10,7 @@ router.get("/signin", forwardAuthenticated, controller.signin);
 router.get("/logout", controller.logout)
 router.post("/register", controller.register)
 router.post("/login", controller.login)
-router.get("/user/:id", controller.deleteUser)
+router.post("/user/:id", controller.deleteUser)
 router.get("/users", controller.getUsers)
 
 

@@ -8,6 +8,8 @@ const User = require("./../models/users");
 exports.signup = (req, res) => res.render("register");
 // Get Login Page
 exports.signin = (req, res) => res.render("login");
+// Get User Page
+//exports.users = (req, res) => res.render("users");
 
 // Post Registration
 exports.register = (req, res) => {
@@ -88,12 +90,17 @@ exports.logout = (req, res) => {
 
  //Delete User
  exports.deleteUser = (req, res) => {
-    User.deleteOne({ _id: req.params.userId })
+    User.deleteOne({ _id: req.params.id })
       .exec()
       .then(() => {
-        res.status(200).json({
-          message: "User Deleted Successfully!",
-        });
+        req.flash(
+          "success_msg",
+          "User deleted successfully"
+        );
+        res.redirect('users')
+        // res.status(200).json({
+        //   message: "User Deleted Successfully!",
+        // });
       })
       .catch((err) => {
         res.status(500).json({
