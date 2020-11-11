@@ -2,6 +2,7 @@
 
 <h1 class="mt-4">Admin Page</h1>
 <p class="lead mb-3">Welcome Admin</p>
+<%- include('partials/messages'); -%>
 <div class="mb-4">
     <% if(typeof users != 'undefined'){ %> 
         <% users.forEach(function(user) { %>

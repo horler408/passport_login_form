@@ -60,7 +60,7 @@ exports.register = (req, res) => {
               .then((user) => {
                 req.flash(
                   "success_msg",
-                  "You are now registered and can log in"
+                  "You registration was successfull, please log in"
                 );
                 res.redirect("/auth/signin");
               })
@@ -97,7 +97,7 @@ exports.logout = (req, res) => {
           "success_msg",
           "User deleted successfully"
         );
-        res.redirect('users')
+        res.redirect('/users')
         // res.status(200).json({
         //   message: "User Deleted Successfully!",
         // });
