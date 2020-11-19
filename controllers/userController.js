@@ -89,35 +89,35 @@ exports.logout = (req, res) => {
 }
 
  //Delete User
- exports.deleteUser = (req, res) => {
-    User.deleteOne({ _id: req.params.id })
-      .exec()
-      .then(() => {
-        req.flash(
-          "success_msg",
-          "User deleted successfully"
-        );
-        res.redirect('/users')
+exports.deleteUser = (req, res) => {
+  User.deleteOne({ _id: req.params.id })
+    .exec()
+    .then(() => {
+      req.flash(
+        "success_msg",
+        "User deleted successfully"
+      );
+      res.redirect('/users')
         // res.status(200).json({
         //   message: "User Deleted Successfully!",
         // });
-      })
-      .catch((err) => {
-        res.status(500).json({
-          error: err,
-        });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: err,
       });
-  };
+    });
+};
   
-  exports.getUsers = (req, res) => {
-    User.find().exec()
-    .then(user => {
-      res.render('users', {users: user})
-      // res.status(200).json(user)
+exports.getUsers = (req, res) => {
+  User.find().exec()
+  .then(user => {
+    res.render('users', {users: user})
+    // res.status(200).json(user)
+  })
+  .catch(error => {
+    res.status(400).json({
+      error: error
     })
-    .catch(error => {
-      res.status(400).json({
-        error: error
-      })
-    })
-  }
+  })
+}
