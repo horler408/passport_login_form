@@ -17,13 +17,7 @@ require("./config/passport")(passport);
 
 // DB Config
 dbConnect()
-// const db = require("./config/keys").mongoURL;
 
-// // Connect to MongoDB
-// mongoose
-//   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => console.log("MongoDB Connected"))
-//   .catch((err) => console.log(err));
 
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')))
