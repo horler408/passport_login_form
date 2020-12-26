@@ -5,8 +5,8 @@ const controller = require('./../controllers/indexController')
 const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
 
 
-router.get("/", forwardAuthenticated, controller.home);
+router.get("/index", controller.home);
 router.get("/users", forwardAuthenticated, controller.users);
-router.get("/dashboard", ensureAuthenticated, controller.dashboard)
+router.get("/dashboard", forwardAuthenticated, controller.dashboard)
 
 module.exports = router;

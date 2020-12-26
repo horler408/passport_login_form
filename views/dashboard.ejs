@@ -1,7 +1,7 @@
 <%- include('partials/header'); -%>
 
 <h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= user.name %></p>
+<p class="lead mb-3">Welcome <%= typeof user != 'undefined' ? user.name : '' %></p>
 <a href="auth/logout" class="btn btn-secondary">Logout</a>
 
 <div class="drop_down">
@@ -11,16 +11,17 @@
         onclick="dropDown()"
       >
         <img
-          src="<%= typeof user.avatar != 'undefined' ? user.avatar : '' %>"
+          src="<%= typeof user != 'undefined' ? user.avatar : '' %>"
           className="rounded-full w-6 border-2 border-white"
           alt="Avatar"
         />
         <div className="px-3">
-          <p className="text-white"><%= user.name %></p>
+          <p className="text-white"><%= typeof user != 'undefined' ? user.name : '' %></p>
         </div>
         <div className="mr-1 text-white">
         </div>
       </button>
+      <div><a href="/auth/users">Get Users</a></div>
 </div>
 
 <%- include('partials/footer'); -%>
