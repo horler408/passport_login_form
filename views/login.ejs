@@ -1,23 +1,24 @@
 <%- include('partials/header'); -%>
 
 <div class="row mt-5">
-  <div class="col-md-6 m-auto">
+  <div class="col-md-4 m-auto">
     <div class="card card-body">
       <h1 class="text-center mb-3">  Login</h1>
       <%- include('partials/messages'); -%> 
       <form action="/auth/login" method="POST">
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email" class="font-weight-bold lead">Email</label>
           <input
             type="email"
             id="email"
             name="email"
             class="form-control"
-            placeholder="Enter Email"
+            placeholder="Email Address"
           />
         </div>
+
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password" class="font-weight-bold lead">Password</label>
           <input
             type="password"
             id="password"
@@ -26,14 +27,20 @@
             placeholder="Enter Password"
           />
         </div>
-        <button type="submit" class="submit_btn">Login</button>
+        <button type="submit" class="btn btn-primary submit_btn">Login</button>
       </form>
-      <p class="text-center lead mt-4">
-        No Account yet? <a href="/auth/signup">Register</a>
-      </p>
-      <p class="text-center lead mt-2">
-        Return to <a href="/index">Home</a>
-      </p>
+      <div class="row mt-4 text-center">
+        <div class="col-md-6">
+          <p class="lead">
+            No Account yet? <a href="/auth/signup">Register</a>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p class="lead">
+            Return to <a href="/">Home</a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

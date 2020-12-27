@@ -21,7 +21,7 @@ exports.register = (req, res) => {
   }
 
   if (password.length < 8) {
-    errors.push({ msg: "Password must be at least 8 characters" });
+    errors.push({ msg: "Password must be at least 8 characters long" });
   }
 
   if (errors.length > 0) {
