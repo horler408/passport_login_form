@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const db = require("./config/keys").mongoURL;
+const db = require("./keys").mongoURL;
 
 const dbConnect = () => {
     mongoose
